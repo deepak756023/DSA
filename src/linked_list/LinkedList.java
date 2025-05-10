@@ -100,15 +100,6 @@ public class LinkedList {
     }
 
     public boolean contains(int value) {
-
-        // var current = first;
-        // while (current != null) {
-        // if (current.value == value) {
-        // return true;
-        // }
-        // current = current.next;
-        // }
-        // return false;
         return indexOf(value) != -1;
     }
 
@@ -127,6 +118,41 @@ public class LinkedList {
 
     public int size() {
         return size;
+    }
+
+    public void reverse() {
+        if (isEmpty())
+            return;
+
+        var previous = first;
+        var current = first.next;
+        while (current != null) {
+            var next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        last = first;
+        last.next = null;
+        first = previous;
+
+    }
+
+    public int findKthNodeFromTheEnd(int k) {
+        var a = first;
+        var b = first;
+        for (int i = 0; i < k - 1; i++) {
+            if (b.next == null) {
+                throw new IllegalStateException();
+            }
+            b = b.next;
+        }
+        while (b.next != null) {
+            b = b.next;
+            a = a.next;
+        }
+        return a.value;
+
     }
 
 }
