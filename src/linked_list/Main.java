@@ -8,11 +8,16 @@ public class Main {
         list.addFirst(10);
         list.addFirst(20);
         list.addFirst(30);
-        list.addLast(40);
-        // list.removeLast();
+        list.addFirst(40);
         System.out.println(Arrays.toString(list.toArray()));
-        System.out.println(list.contains(10));
-        System.out.println(list.indexOf(20));
+        System.out.println(list.findKthNodeFromTheEnd(6));
+
+        // list.removeLast();
+        // System.out.println(Arrays.toString(list.toArray()));
+        // System.out.println(list.contains(10));
+        // System.out.println(list.indexOf(20));
+        // list.reverse();
+        // System.out.println(Arrays.toString(list.toArray()));
 
     }
 
