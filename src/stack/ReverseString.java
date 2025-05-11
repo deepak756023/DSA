@@ -27,3 +27,16 @@ public class ReverseString {
     }
 
 }
+// String vs StringBuffer
+// 1.String:Immutable
+// Once created,the contents of a String cannot be changed.Any modification
+// (e.g., concatenation) creates a new String object.
+// StringBuffer:Mutable
+// You can modify thecontents (append, insert, delete, etc.) without creating a
+// new object.
+
+// 2. Performance
+// String:Slower forfrequent modifications (e.g., in loops) because it creates
+// new objects each time.
+// StringBuffer: Faster for frequent changes because it's mutable and doesn't
+// create new objects.
