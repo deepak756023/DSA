@@ -69,7 +69,7 @@ public class Array {
 
     private void resizeNums() {
 
-        int[] copy = new int[count + 1];
+        int[] copy = new int[count * 2];
         for (int i = 0; i < nums.length; i++)
             copy[i] = nums[i];
 
