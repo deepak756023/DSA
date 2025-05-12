@@ -3,48 +3,53 @@ package queue;
 import java.util.Arrays;
 
 public class ArrayQueue {
-    private int[] array;
-    private int front;
+    private int[] items;
     private int rear;
+    private int front;
+    private int count;
 
     public ArrayQueue(int capacity) {
-        array = new int[capacity];
+        items = new int[capacity];
     }
 
-    public void add(int value) {
+    public void add(int item) {
+        if (isFull())
+            throw new IllegalStateException();
 
-        array[rear] = value;
-        rear = (rear + 1) % array.length;
-
+        items[rear] = item;
+        rear = (rear + 1) % items.length;
+        count++;
     }
 
     public int remove() {
-        var item = array[front];
-        array[front] = 0;
-        front = (front + 1) % array.length;
+        if (isEmpty())
+            throw new IllegalStateException();
+
+        var item = items[front];
+        items[front] = 0;
+        front = (front + 1) % items.length;
+        count--;
+
         return item;
-
     }
 
-    public Boolean isEmpty() {
-        if (front == -1) {
-            return true;
-        }
-        return false;
+    public int peek() {
+        if (isEmpty())
+            throw new IllegalStateException();
+
+        return items[front];
     }
 
-    // public void print() {
-    // int[] copy = {};
-    // if (front == -1) {
-    // System.out.println(Arrays.toString(copy));
-    // } else {
-    // copy = Arrays.copyOfRange(array, front, rear + 1);
-    // System.out.println(Arrays.toString(copy));
-    // }
+    public boolean isEmpty() {
+        return count == 0;
+    }
 
-    // }
+    public boolean isFull() {
+        return count == items.length;
+    }
+
     @Override
     public String toString() {
-        return Arrays.toString(array);
+        return Arrays.toString(items);
     }
 }
