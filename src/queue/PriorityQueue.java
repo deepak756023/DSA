@@ -31,6 +31,18 @@ public class PriorityQueue {
         return i + 1;
     }
 
+    // O(1)
+    public int remove() {
+        if (isEmpty())
+            throw new IllegalStateException();
+
+        return items[--count];
+    }
+
+    public boolean isEmpty() {
+        return count == 0;
+    }
+
     @Override
     public String toString() {
         return Arrays.toString(items);
