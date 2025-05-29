@@ -6,9 +6,6 @@ public class ReverseString {
     public static void main(String[] args) {
 
         String str = "abcd";
-        if (str == null)
-            throw new IllegalArgumentException();
-
         Stack<Character> stack = new Stack<>();
 
         // for (int i = 0; i < str.length(); i++)
