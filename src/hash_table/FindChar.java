@@ -28,8 +28,8 @@ public class FindChar {
         for (var ch : str.toCharArray()) {
             if (set.contains(ch))
                 return ch;
-            else
-                set.add(ch);
+
+            set.add(ch);
 
         }
         return Character.MIN_VALUE;
