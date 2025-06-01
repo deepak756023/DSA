@@ -9,8 +9,10 @@ public class Main {
         list.addFirst(20);
         list.addFirst(30);
         list.addFirst(40);
+        list.addFirst(40);
         System.out.println(Arrays.toString(list.toArray()));
-        System.out.println(list.findKthNodeFromTheEnd(6));
+        // System.out.println(list.findKthNodeFromTheEnd(6));
+        list.findMiddle();
 
         // list.removeLast();
         // System.out.println(Arrays.toString(list.toArray()));

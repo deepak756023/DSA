@@ -155,4 +155,23 @@ public class LinkedList {
 
     }
 
+    public void findMiddle() {
+        if (isEmpty())
+            throw new IllegalStateException();
+
+        var a = first;
+        var b = first;
+
+        while (b.next != null && b.next.next != null) {
+            // while (b != last && b.next != last) {
+            a = a.next;
+            b = b.next.next;
+        }
+
+        if (b == last) {
+            System.out.println(a.value);
+        } else {
+            System.out.println(a.value + ", " + a.next.value);
+        }
+    }
 }
