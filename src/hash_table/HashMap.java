@@ -2,7 +2,7 @@ package hash_table;
 
 import java.util.LinkedList;
 
-public class HashTable {
+public class HashMap {
     private class Entry {
         private int key;
         private String value;
@@ -15,6 +15,9 @@ public class HashTable {
     }
 
     LinkedList<Entry>[] entries = new LinkedList[10];
+
+    //// when the number of entry increases HashMap perfoms well
+    // 10 < 100 < 1000 < 10000
 
     public void put(int key, String value) {
         var index = hash(key);
