@@ -79,4 +79,14 @@ public class Array {
 
     }
 
+    // intersection of Dynamic Arrays
+    public Array intersect(Array other) {
+        var intersect = new Array(count);
+
+        for (var num : nums)
+            if (other.indexOf(num) >= 0)
+                intersect.insert(num);
+
+        return intersect;
+    }
 }
