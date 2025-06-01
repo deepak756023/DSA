@@ -20,7 +20,9 @@ public class Array {
         if (index < 0 || index > count)
             throw new IllegalArgumentException();
 
-        resizeNums();
+        if (count == nums.length)
+            resizeNums();
+
         for (int i = count - 1; i >= index; i--)
             nums[i + 1] = nums[i];
 

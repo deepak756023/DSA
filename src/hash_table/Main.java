@@ -10,7 +10,7 @@ public class Main {
         // var result2 = findChar.findFirstRepeatChar("my name is deepak nayak");
         // System.out.println(result2);
 
-        HashTable table = new HashTable();
+        HashMap table = new HashMap();
         table.put(6, "A");
         table.put(8, "B");
         table.put(11, "C");
