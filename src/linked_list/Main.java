@@ -21,6 +21,9 @@ public class Main {
         // list.reverse();
         // System.out.println(Arrays.toString(list.toArray()));
 
+        var loopList = LinkedList.createWithLoop();
+        System.out.println(loopList.hasLoop());
+
     }
 
 }
