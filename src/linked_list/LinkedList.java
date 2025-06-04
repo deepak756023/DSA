@@ -201,7 +201,7 @@ public class LinkedList {
         list.addLast(50);
 
         // Create the loop
-        // list.last.next = node;
+        list.last.next = node;
 
         return list;
     }
