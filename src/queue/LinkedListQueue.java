@@ -1,9 +1,11 @@
 package queue;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
 public class LinkedListQueue {
+    // LinkedList<Integer> list = new LinkedList<>();
 
     private class Node {
         private int value;
@@ -18,8 +20,10 @@ public class LinkedListQueue {
     private Node last;
     private int size;
 
+    // O(1)
     public void enqueue(int value) {
-        Node node = new Node(value);
+        // list.addLast(item);
+        var node = new Node(value);
         if (isEmpty()) {
             first = last = node;
         } else {
@@ -29,34 +33,42 @@ public class LinkedListQueue {
         size++;
     }
 
+    // O(1)
     public int dequeue() {
+        // return list.removeFirst();
         if (isEmpty())
             throw new NoSuchElementException();
 
-        int value = first.value;
-        if (first == last) {
+        var front = first;
+        if (first == last)
             first = last = null;
-        } else {
-            Node second = first.next;
+        else {
+            var second = first.next;
             first.next = null;
             first = second;
         }
         size--;
-        return value;
+        return front.value;
     }
 
+    // )(1)
     public int peek() {
+        // return list.getFirst();
         if (isEmpty())
             throw new NoSuchElementException();
 
         return first.value;
     }
 
+    // )(1)
     public int size() {
+        // return list.size();
         return size;
     }
 
+    // O(1)
     public boolean isEmpty() {
+        // return list.isEmpty();
         return first == null;
     }
 
