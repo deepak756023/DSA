@@ -1,7 +1,6 @@
 package queue;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
 public class LinkedListQueue {

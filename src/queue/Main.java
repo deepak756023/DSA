@@ -1,7 +1,7 @@
 package queue;
 
-import java.util.ArrayDeque;
-import java.util.Queue;
+// import java.util.ArrayDeque;
+// import java.util.Queue;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,16 +30,29 @@ public class Main {
         // queue.remove();
         // System.out.println(queue);
 
-        LinkedListQueue list = new LinkedListQueue();
-        list.enqueue(10);
-        list.enqueue(20);
-        list.enqueue(30);
-        list.enqueue(70);
-        list.enqueue(50);
-        list.dequeue();
-        System.out.println(list.size());
+        // LinkedListQueue list = new LinkedListQueue();
+        // list.enqueue(10);
+        // list.enqueue(20);
+        // list.enqueue(30);
+        // list.enqueue(70);
+        // list.enqueue(50);
+        // list.dequeue();
+        // System.out.println(list.size());
 
-        System.out.println(list.toString());
+        // System.out.println(list.toString());
+
+        StackWithTwoQueues stack = new StackWithTwoQueues();
+        stack.push(10);
+        stack.push(30);
+        stack.push(20);
+        stack.push(90);
+        stack.push(70);
+
+        System.out.println(stack.toString());
+        stack.pop();
+        System.out.println(stack.toString());
+        System.out.println(stack.size());
+
     }
 
 }
