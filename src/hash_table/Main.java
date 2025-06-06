@@ -1,5 +1,7 @@
 package hash_table;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -23,7 +25,10 @@ public class Main {
         // int mostTimes = hashTable.mostFrequent(numbers);
         // System.out.println(mostTimes);
 
-        int countPairs = hashTable.countPairsWithDiff(numbers, 2);
-        System.out.println(countPairs);
+        // int countPairs = hashTable.countPairsWithDiff(numbers, 2);
+        // System.out.println(countPairs);
+
+        int[] indices = hashTable.twoSum(numbers, 9);
+        System.out.println(Arrays.toString(indices));
     }
 }
