@@ -19,9 +19,11 @@ public class Main {
         // System.out.println(table.get(6));
 
         HashTableExcercises hashTable = new HashTableExcercises();
-        int[] numbers = { 1, 2, 2, 3, 3, 3, 4 };
-        int mostTimes = hashTable.mostFrequent(numbers);
-        System.out.println(mostTimes);
+        int[] numbers = { 1, 7, 5, 9, 2, 12, 3 };
+        // int mostTimes = hashTable.mostFrequent(numbers);
+        // System.out.println(mostTimes);
 
+        int countPairs = hashTable.countPairsWithDiff(numbers, 2);
+        System.out.println(countPairs);
     }
 }
