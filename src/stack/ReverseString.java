@@ -24,7 +24,7 @@ public class ReverseString {
     }
 
 }
-// String vs StringBuffer
+// StringBuilder vs StringBuffer
 // 1.String:Immutable
 // Once created,the contents of a String cannot be changed.Any modification
 // (e.g., concatenation) creates a new String object.
