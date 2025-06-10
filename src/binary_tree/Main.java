@@ -15,6 +15,8 @@ public class Main {
 
         tree.depthPostOrder();
 
+        System.out.println(tree.height());
+
     }
 
 }
