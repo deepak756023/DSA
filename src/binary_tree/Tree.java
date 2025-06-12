@@ -113,4 +113,21 @@ public class Tree {
 
     }
 
+    public boolean equals(Tree tree) {
+        return equals(root, tree.root);
+    }
+
+    private boolean equals(Node root1, Node root2) {
+
+        if (root1 == null && root2 == null)
+            return true;
+
+        if (root1 != null && root2 != null) {
+            return root1.value == root2.value
+                    && equals(root1.leftChild, root2.leftChild)
+                    && equals(root1.rightChild, root2.rightChild);
+        }
+        return false;
+    }
+
 }
