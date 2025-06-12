@@ -13,21 +13,25 @@ public class Main {
         tree.insert(8);
         tree.insert(26);
 
+        // tree.swap();
+
+        System.out.println(tree.isBinarySearchTree());
+
         // tree.depthPostOrder();
 
         // System.out.println(tree.height());
-        Tree newTree = new Tree();
-        newTree.insert(20);
-        newTree.insert(10);
-        newTree.insert(30);
-        newTree.insert(6);
-        newTree.insert(14);
-        newTree.insert(24);
-        newTree.insert(3);
-        newTree.insert(8);
-        newTree.insert(26);
+        // Tree newTree = new Tree();
+        // newTree.insert(20);
+        // newTree.insert(10);
+        // newTree.insert(30);
+        // newTree.insert(6);
+        // newTree.insert(14);
+        // newTree.insert(24);
+        // newTree.insert(3);
+        // newTree.insert(8);
+        // newTree.insert(26);
 
-        System.out.println(tree.equals(newTree));
+        // System.out.println(tree.equals(newTree));
 
     }
 
