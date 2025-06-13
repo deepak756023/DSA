@@ -201,4 +201,50 @@ public class Tree {
 
     }
 
+    public int size() {
+        return size(root);
+    }
+
+    private int size(Node root) {
+        if (root == null)
+            return 0;
+        if (isLeaf(root))
+            return 1;
+
+        return (size(root.leftChild) + size(root.rightChild)) + 1;
+
+    }
+
+    public int countLeaves() {
+        return countLeaves(root);
+    }
+
+    private int countLeaves(Node root) {
+        if (root == null)
+            return 0;
+
+        if (isLeaf(root))
+            return 1;
+
+        return countLeaves(root.leftChild) + countLeaves(root.rightChild);
+    }
+
+    public int max() {
+        return max(root);
+    }
+
+    private int max(Node root) {
+        if (root == null) {
+            return Integer.MIN_VALUE;
+        }
+
+        if (isLeaf(root)) {
+            return root.value;
+        }
+
+        var left = max(root.leftChild);
+        var right = max(root.rightChild);
+        return Math.max(Math.max(left, right), root.value);
+    }
+
 }
