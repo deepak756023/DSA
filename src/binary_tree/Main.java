@@ -24,7 +24,7 @@ public class Main {
         // System.out.println(tree.countLeaves());
 
         // System.out.println(tree.max());
-        System.out.println(tree.contains(100));
+        System.out.println(tree.areSiblings(10, 30));
 
         // tree.swap();
 

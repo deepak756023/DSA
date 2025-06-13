@@ -233,6 +233,7 @@ public class Tree {
         return max(root);
     }
 
+    // postOrder
     private int max(Node root) {
         if (root == null) {
             return Integer.MIN_VALUE;
@@ -251,6 +252,7 @@ public class Tree {
         return contains(root, value);
     }
 
+    // preOrder
     private boolean contains(Node root, int value) {
         if (root == null)
             return false;
@@ -259,6 +261,27 @@ public class Tree {
             return true;
 
         return contains(root.leftChild, value) || contains(root.rightChild, value);
+    }
+
+    public boolean areSiblings(int value1, int value2) {
+        return areSiblings(root, value1, value2);
+
+    }
+
+    public boolean areSiblings(Node root, int a, int b) {
+        if (root == null)
+            return false;
+
+        if (root.leftChild != null && root.rightChild != null) {
+            int leftVal = root.leftChild.value;
+            int rightVal = root.rightChild.value;
+
+            if ((leftVal == a && rightVal == b) || (leftVal == b && rightVal == a))
+                return true;
+        }
+
+        // Recursively check in left and right subtree
+        return areSiblings(root.leftChild, a, b) || areSiblings(root.rightChild, a, b);
     }
 
 }
