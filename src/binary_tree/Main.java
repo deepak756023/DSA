@@ -12,13 +12,18 @@ public class Main {
         tree.insert(3);
         tree.insert(8);
         tree.insert(26);
+        tree.insert(100);
 
         // var list = tree.getNodesAtDistance(3);
         // for (var item : list)
         // System.out.println(item);
 
         // tree.traverseLevelOrder();
-        System.out.println(tree.min());
+        System.out.println(tree.size());
+
+        System.out.println(tree.countLeaves());
+
+        System.out.println(tree.max());
 
         // tree.swap();
 
