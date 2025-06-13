@@ -17,7 +17,8 @@ public class Main {
         // for (var item : list)
         // System.out.println(item);
 
-        tree.traverseLevelOrder();
+        // tree.traverseLevelOrder();
+        System.out.println(tree.min());
 
         // tree.swap();
 

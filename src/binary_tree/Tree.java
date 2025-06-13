@@ -108,10 +108,33 @@ public class Tree {
         if (root == null)
             return -1;
 
-        if (root.leftChild == null && root.rightChild == null)
+        if (isLeaf(root))
             return 0;
 
         return 1 + Math.max(height(root.leftChild), height(root.rightChild));
+
+    }
+
+    private boolean isLeaf(Node node) {
+        return node.leftChild == null && node.rightChild == null;
+    }
+
+    public int min() {
+        return min(root);
+    }
+
+    private int min(Node root) {
+
+        if (root == null)
+            return Integer.MAX_VALUE;
+
+        if (isLeaf(root))
+            return root.value;
+
+        var left = min(root.leftChild);
+        var right = min(root.rightChild);
+
+        return Math.min(Math.min(left, right), root.value);
 
     }
 
