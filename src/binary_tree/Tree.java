@@ -1,6 +1,7 @@
 package binary_tree;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Tree {
 
@@ -284,4 +285,50 @@ public class Tree {
         return areSiblings(root.leftChild, a, b) || areSiblings(root.rightChild, a, b);
     }
 
+    public List<Integer> getAncestors(int value) {
+        var list = new ArrayList<Integer>();
+        getAncestors(root, value, list);
+        return list;
+    }
+
+    private boolean getAncestors(Node root, int value, List<Integer> list) {
+        // We should traverse the tree until we find the target value. If
+        // find the target value, we return true without adding the current node
+        // to the list; otherwise, if we ask for ancestors of 5, 5 will be also
+        // added to the list.
+        if (root == null)
+            return false;
+
+        if (root.value == value)
+            return true;
+
+        // If we find the target value in the left or right sub-trees, that means
+        // the current node (root) is one of the ancestors. So we add it to the list.
+        if (getAncestors(root.leftChild, value, list) ||
+                getAncestors(root.rightChild, value, list)) {
+            list.add(root.value);
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean isBalanced() {
+        return isBalanced(root);
+    }
+
+    private boolean isBalanced(Node root) {
+        if (root == null)
+            return true;
+
+        var balanceFactor = height(root.leftChild) - height(root.rightChild);
+
+        return Math.abs(balanceFactor) <= 1 &&
+                isBalanced(root.leftChild) &&
+                isBalanced(root.rightChild);
+    }
+
+    public boolean isPerfect() {
+        return size() == (Math.pow(2, height() + 1) - 1);
+    }
 }
