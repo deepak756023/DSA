@@ -7,7 +7,7 @@ public class Heap {
     private int size = 0;
 
     public void insert(int value) {
-        if (size == numbers.length)
+        if (isFull())
             throw new IllegalStateException("Heap is full");
 
         numbers[size] = value;
@@ -15,8 +15,21 @@ public class Heap {
         size++;
     }
 
+    public boolean isFull() {
+        return size == numbers.length;
+    }
+
+    private void bubbleUp(int index) {
+        while (index > 0 && numbers[index] > numbers[parent(index)]) {
+
+            swap(index, parent(index));
+
+            index = parent(index);
+        }
+    }
+
     public int remove() {
-        if (size == 0)
+        if (isEmpty())
             throw new IllegalStateException();
 
         var root = numbers[0];
@@ -26,6 +39,10 @@ public class Heap {
 
         return root;
 
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
     }
 
     private void bubbleDown() {
@@ -87,15 +104,6 @@ public class Heap {
 
     private int rightChild(int index) {
         return numbers[rightChildIndex(index)];
-    }
-
-    private void bubbleUp(int index) {
-        while (index > 0 && numbers[index] > numbers[parent(index)]) {
-
-            swap(index, parent(index));
-
-            index = parent(index);
-        }
     }
 
     private void swap(int first, int second) {
