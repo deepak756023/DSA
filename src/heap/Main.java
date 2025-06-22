@@ -28,6 +28,10 @@ public class Main {
 
         System.out.println(Arrays.toString(numbers));
 
+        int[] nums = { 15, 10, 3, 8, 12, 9, 4, 1, 24, 80, 50 };
+        MaxHeap.heapify(nums);
+        System.out.println(Arrays.toString(nums));
+
     }
 
 }
