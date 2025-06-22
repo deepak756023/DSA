@@ -115,4 +115,10 @@ public class Heap {
     public void print() {
         System.out.println(Arrays.toString(Arrays.copyOfRange(numbers, 0, size)));
     }
+
+    public int max() {
+        if (isEmpty())
+            throw new IllegalStateException();
+        return numbers[0];
+    }
 }

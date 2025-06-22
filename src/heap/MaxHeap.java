@@ -32,4 +32,17 @@ public class MaxHeap {
         numbers[second] = temp;
     }
 
+    public static int getKthLargerst(int[] numbers, int k) {
+        if (k < 1 || k > numbers.length)
+            throw new IllegalArgumentException();
+        Heap heap = new Heap();
+        for (int i = 0; i < numbers.length; i++)
+            heap.insert(numbers[i]);
+        for (int i = 0; i < k - 1; i++)
+            heap.remove();
+
+        return heap.max();
+
+    }
+
 }
