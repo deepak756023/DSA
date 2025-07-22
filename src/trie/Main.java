@@ -6,8 +6,11 @@ public class Main {
 
         TrieWithHashMap trie = new TrieWithHashMap();
         trie.insert("canada");
-        // trie.insert("cat");
-        System.out.println(trie.contains("can"));
+        trie.insert("dog");
+        // trie.remove("dog");
+        System.out.println(trie.contains("canada"));
+        System.out.println(trie.contains("dog"));
+        // trie.traverse();
     }
 
 }

@@ -116,6 +116,18 @@ public class LinkedList {
         return -1;
     }
 
+    public void clear() {
+        var current = first;
+        while (current != null) {
+            var next = current.next;
+            current.next = null; // Disconnect node
+            current = next;
+        }
+
+        first = last = null;
+        size = 0;
+    }
+
     public int size() {
         return size;
     }
