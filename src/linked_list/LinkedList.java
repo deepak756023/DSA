@@ -45,6 +45,31 @@ public class LinkedList {
         size++;
     }
 
+    public void insertAt(int index, int value) {
+        if (index < 0 || index > size)
+            throw new IndexOutOfBoundsException();
+
+        var node = new Node(value);
+
+        if (index == 0) {
+            addFirst(value);
+            return;
+        }
+
+        if (index == size) {
+            addLast(value);
+            return;
+        }
+
+        var current = first;
+        for (int i = 0; i < index - 1; i++)
+            current = current.next;
+
+        node.next = current.next;
+        current.next = node;
+        size++;
+    }
+
     public int[] toArray() {
         int[] array = new int[size];
         var current = first;
@@ -86,6 +111,34 @@ public class LinkedList {
         }
         size--;
 
+    }
+
+    public void removeAt(int index) {
+        if (isEmpty())
+            throw new NoSuchElementException();
+
+        if (index < 0 || index >= size)
+            throw new IndexOutOfBoundsException();
+
+        if (index == 0) {
+            removeFirst();
+            return;
+        }
+
+        if (index == size - 1) {
+            removeLast();
+            return;
+        }
+
+        var previous = first;
+        for (int i = 0; i < index - 1; i++)
+            previous = previous.next;
+
+        var target = previous.next;
+        previous.next = target.next;
+        target.next = null; // Help GC
+
+        size--;
     }
 
     private Node getPrevious(Node last) {
