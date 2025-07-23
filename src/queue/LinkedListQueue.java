@@ -72,6 +72,7 @@ public class LinkedListQueue {
     }
 
     // O(n)
+    @Override
     public String toString() {
         ArrayList<Integer> list = new ArrayList<>();
 

@@ -22,15 +22,15 @@ public class Expression {
         return stack.empty();
     }
 
-    private Boolean isLeftBracket(char ch) {
+    private boolean isLeftBracket(char ch) {
         return ch == '(' || ch == '<' || ch == '{' || ch == '[';
     }
 
-    private Boolean isRightBracket(char ch) {
+    private boolean isRightBracket(char ch) {
         return ch == ')' || ch == '>' || ch == '}' || ch == ']';
     }
 
-    private Boolean isBracketNotMatch(char left, char right) {
+    private boolean isBracketNotMatch(char left, char right) {
         return right == ')' && left != '(' ||
                 right == '>' && left != '<' ||
                 right == '}' && left != '{' ||
