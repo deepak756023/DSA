@@ -7,15 +7,19 @@ public class CustomStack {
     private int count;
 
     public void push(int value) {
-        if (count >= nums.length) {
-            int[] copy = new int[count * 2];
-            for (int i = 0; i < nums.length; i++)
-                copy[i] = nums[i];
+        if (count >= nums.length)
+            resizeStack();
 
-            nums = copy;
-        }
         nums[count] = value;
         count++;
+    }
+
+    private void resizeStack() {
+        int[] copy = new int[count * 2];
+        for (int i = 0; i < nums.length; i++)
+            copy[i] = nums[i];
+
+        nums = copy;
     }
 
     public Boolean isEmpty() {
@@ -28,7 +32,7 @@ public class CustomStack {
         if (isEmpty()) {
             throw new IllegalStateException();
         }
-        int item = nums[count];
+        int item = nums[count - 1];
         count--;
         return item;
     }
