@@ -113,6 +113,10 @@ public class LinkedList {
 
     }
 
+    public void remove(int val) {
+        
+    }
+
     public void removeAt(int index) {
         if (isEmpty())
             throw new NoSuchElementException();
